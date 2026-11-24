@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy · Gizlilik Politikası</title>
+<title>Privacy Policy · Gizlilik Politikası · Política de privacidad · Política de Privacidade</title>
 <style>
   :root{
     --board:#0e1c18;        /* koyu satranç yeşili — oyunun theme-color'ı */
@@ -12,11 +12,9 @@
     --brass-dim:#9c7c2f;
     --ink:#1c2320;          /* metin */
     --ink-soft:#4a544f;     /* ikincil metin */
-    --paper:#f7f8f6;        /* zemin (soğuk, kirli beyaz — cream default'tan kaçınıyoruz) */
+    --paper:#f7f8f6;        /* zemin */
     --card:#ffffff;
     --rule:#e2e6e2;
-    --draft:#fff4d6;
-    --draft-line:#e6c760;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -26,9 +24,9 @@
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
   }
-  /* dil görünürlüğü */
-  [data-lang="en"] .tr{display:none;}
-  [data-lang="tr"] .en{display:none;}
+  /* dil görünürlüğü: yalnız seçili dil görünür */
+  .en,.tr,.es,.pt{display:none;}
+  [data-lang="en"] .en,[data-lang="tr"] .tr,[data-lang="es"] .es,[data-lang="pt"] .pt{display:revert;}
 
   /* Masthead */
   header{background:linear-gradient(160deg,var(--board2),var(--board));color:#eef2ee;padding:34px 22px 30px;}
@@ -40,7 +38,7 @@
   .brass-rule{height:2px;background:var(--brass);max-width:720px;margin:0 auto;}
 
   /* Dil değiştirici */
-  .langbar{max-width:720px;margin:16px auto 0;display:flex;gap:6px;justify-content:flex-end;}
+  .langbar{max-width:720px;margin:16px auto 0;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;}
   .langbtn{font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border:1px solid rgba(255,255,255,.3);
     background:transparent;color:#cdd8d1;border-radius:999px;cursor:pointer;}
   .langbtn[aria-pressed="true"]{background:var(--brass);color:var(--board);border-color:var(--brass);}
@@ -48,27 +46,19 @@
 
   main{max-width:720px;margin:0 auto;padding:26px 22px 60px;}
 
-  /* Taslak uyarı bandı — YAYINLAMADAN ÖNCE SİL */
-  .draftnote{background:var(--draft);border:1px solid var(--draft-line);border-radius:12px;
-    padding:14px 16px;margin:20px 0 28px;font-size:13.5px;line-height:1.55;color:#5c4a12;}
-  .draftnote b{color:#3f3204;}
-
   section{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:20px 22px;margin-bottom:14px;}
   h2{font-family:Georgia,"Times New Roman",serif;font-size:19px;margin:0 0 10px;color:var(--board2);
     display:flex;align-items:baseline;gap:12px;}
   h2 .num{font-size:13px;font-weight:700;color:var(--brass-dim);font-family:-apple-system,sans-serif;
-    letter-spacing:.05em;flex:0 0 auto;min-width:22px;}
+    letter-spacing:.05em;flex:0 0 auto;min-width:22px;display:inline;}
   h3{font-size:15px;margin:16px 0 4px;color:var(--ink);}
   p{margin:0 0 10px;}
   ul{margin:6px 0 12px;padding-left:20px;}
   li{margin-bottom:6px;}
   a{color:var(--brass-dim);text-underline-offset:2px;}
   .lead{font-size:16.5px;color:var(--ink-soft);}
-  .ph{background:var(--brass);color:var(--board);padding:1px 7px;border-radius:5px;font-weight:700;
-    font-size:.92em;white-space:nowrap;}
   .meta{font-size:13px;color:var(--ink-soft);}
   footer{max-width:720px;margin:0 auto;padding:0 22px 50px;font-size:12.5px;color:var(--ink-soft);}
-  hr{border:none;border-top:1px solid var(--rule);margin:14px 0;}
 </style>
 </head>
 <body>
@@ -77,13 +67,17 @@
   <div class="langbar">
     <button class="langbtn" data-lang="en" aria-pressed="true" onclick="setLang('en')">English</button>
     <button class="langbtn" data-lang="tr" aria-pressed="false" onclick="setLang('tr')">Türkçe</button>
+    <button class="langbtn" data-lang="es" aria-pressed="false" onclick="setLang('es')">Español</button>
+    <button class="langbtn" data-lang="pt" aria-pressed="false" onclick="setLang('pt')">Português</button>
   </div>
   <div class="wrap">
-    <div class="brandline"><span class="glyph">♟</span><span class="en">Privacy Policy</span><span class="tr">Gizlilik Politikası</span></div>
-    <h1><span class="en">Privacy Policy</span><span class="tr">Gizlilik Politikası</span></h1>
+    <div class="brandline"><span class="glyph">♟</span><span class="en">Privacy Policy</span><span class="tr">Gizlilik Politikası</span><span class="es">Política de privacidad</span><span class="pt">Política de Privacidade</span></div>
+    <h1><span class="en">Privacy Policy</span><span class="tr">Gizlilik Politikası</span><span class="es">Política de privacidad</span><span class="pt">Política de Privacidade</span></h1>
     <p class="sub">
       <span class="en">Chess Valor Realm — mobile game</span>
       <span class="tr">Chess Valor Realm — mobil oyun</span>
+      <span class="es">Chess Valor Realm — juego para móviles</span>
+      <span class="pt">Chess Valor Realm — jogo para celular</span>
     </p>
   </div>
 </header>
@@ -91,22 +85,28 @@
 
 <main>
 
-  <!-- ===================== ENGLISH ===================== -->
-
   <p class="lead en">This Privacy Policy explains what information the Chess Valor Realm mobile game (“the App”, “we”, “us”) collects, how it is used, and the choices you have. The App is published by Chess Valor Realm.</p>
-  <p class="meta en">Effective date: 12 July 2026 · Last updated: 20 October 2026 (Invite friends added)</p>
+  <p class="meta en">Effective date: 12 July 2026 · Last updated: 24 November 2026 (Spanish and Portuguese versions added; Brazil’s LGPD added to “Your rights”)</p>
 
   <p class="lead tr">Bu Gizlilik Politikası, Chess Valor Realm mobil oyununun (“Uygulama”, “biz”) hangi bilgileri topladığını, bunları nasıl kullandığını ve sahip olduğun tercihleri açıklar. Uygulama Chess Valor Realm tarafından yayınlanmaktadır.</p>
-  <p class="meta tr">Yürürlük tarihi: 12 Temmuz 2026 · Son güncelleme: 20 Ekim 2026 (Arkadaş daveti eklendi)</p>
+  <p class="meta tr">Yürürlük tarihi: 12 Temmuz 2026 · Son güncelleme: 24 Kasım 2026 (İspanyolca ve Portekizce sürümler eklendi; “Haklarınız” bölümüne Brezilya LGPD eklendi)</p>
+
+  <p class="lead es">Esta Política de privacidad explica qué información recopila el juego para móviles Chess Valor Realm (“la Aplicación”, “nosotros”), cómo se usa y qué opciones tienes. La Aplicación es publicada por Chess Valor Realm.</p>
+  <p class="meta es">Fecha de entrada en vigor: 12 de julio de 2026 · Última actualización: 24 de noviembre de 2026 (se añadieron las versiones en español y portugués y la LGPD de Brasil en “Tus derechos”)</p>
+
+  <p class="lead pt">Esta Política de Privacidade explica quais informações o jogo para celular Chess Valor Realm (“o Aplicativo”, “nós”) coleta, como elas são usadas e quais escolhas você tem. O Aplicativo é publicado por Chess Valor Realm.</p>
+  <p class="meta pt">Data de vigência: 12 de julho de 2026 · Última atualização: 24 de novembro de 2026 (versões em espanhol e português adicionadas; LGPD do Brasil incluída em “Seus direitos”)</p>
 
   <section>
-    <h2><span class="num">01</span><span class="en">Summary</span><span class="tr">Özet</span></h2>
+    <h2><span class="num">01</span><span class="en">Summary</span><span class="tr">Özet</span><span class="es">Resumen</span><span class="pt">Resumo</span></h2>
     <p class="en">The App is an offline chess game. Your game progress (level, coins, puzzles, statistics, settings) is stored <b>only on your device</b> and, if your phone’s Google backup is turned on, in your own Android backup. We do not run our own accounts or servers and we do not receive your progress. The main data collected comes from third-party services we use to keep the App free and to improve it: <b>Google AdMob</b> for ads, <b>Google Firebase Analytics</b> for anonymous usage statistics, and <b>Google Play</b> for optional in-app purchases.</p>
     <p class="tr">Uygulama çevrimdışı bir satranç oyunudur. Oyun ilerlemen (seviye, altın, bulmacalar, istatistikler, ayarlar) <b>yalnızca cihazında</b> ve telefonunun Google yedeği açıksa kendi Android yedeğinde saklanır. Kendi hesap veya sunucu sistemimiz yoktur ve ilerlemen bize ulaşmaz. Toplanan başlıca veri, uygulamayı ücretsiz tutmak için kullandığımız üçüncü taraf hizmetlerden gelir: reklamlar için <b>Google AdMob</b>, anonim kullanım istatistikleri için <b>Google Firebase Analytics</b> ve isteğe bağlı uygulama içi satın alımlar için <b>Google Play</b>.</p>
+    <p class="es">La Aplicación es un juego de ajedrez sin conexión. Tu progreso (nivel, monedas, problemas, estadísticas, ajustes) se guarda <b>solo en tu dispositivo</b> y, si la copia de seguridad de Google de tu teléfono está activada, en tu propia copia de seguridad de Android. No tenemos cuentas ni servidores propios y no recibimos tu progreso. Los principales datos recopilados provienen de servicios de terceros que usamos para mantener la Aplicación gratuita y mejorarla: <b>Google AdMob</b> para los anuncios, <b>Google Firebase Analytics</b> para estadísticas de uso anónimas y <b>Google Play</b> para las compras opcionales dentro de la aplicación.</p>
+    <p class="pt">O Aplicativo é um jogo de xadrez offline. Seu progresso (nível, moedas, puzzles, estatísticas, configurações) fica salvo <b>somente no seu dispositivo</b> e, se o backup do Google do seu celular estiver ativado, no seu próprio backup do Android. Não temos contas nem servidores próprios e não recebemos seu progresso. Os principais dados coletados vêm de serviços de terceiros que usamos para manter o Aplicativo gratuito e melhorá-lo: <b>Google AdMob</b> para anúncios, <b>Google Firebase Analytics</b> para estatísticas de uso anônimas e <b>Google Play</b> para compras opcionais no aplicativo.</p>
   </section>
 
   <section>
-    <h2><span class="num">02</span><span class="en">Information we and our partners collect</span><span class="tr">Bizim ve iş ortaklarımızın topladığı bilgiler</span></h2>
+    <h2><span class="num">02</span><span class="en">Information we and our partners collect</span><span class="tr">Bizim ve iş ortaklarımızın topladığı bilgiler</span><span class="es">Información que recopilamos nosotros y nuestros socios</span><span class="pt">Informações coletadas por nós e por nossos parceiros</span></h2>
 
     <h3 class="en">a) Data stored on your device</h3>
     <p class="en">Game progress and preferences are saved locally on your device (browser local storage). This data stays on the device and is removed when you clear the App’s data or uninstall it. If you choose a profile picture, you pick a single image with the system picker (no photo-library permission is requested); the App crops it to a small 256×256 copy that is stored only on your device and is never uploaded or shared. You can remove it at any time by selecting “Default”. Your <b>game archive</b> (the moves and results of your last 200 finished games) is also stored only on your device; you can delete any game from the archive screen. You can create a manual backup file from the in-app “Back up progress” screen; that file is created and controlled entirely by you and is not sent to us.</p>
@@ -114,52 +114,97 @@
     <h3 class="tr">a) Cihazında saklanan veriler</h3>
     <p class="tr">Oyun ilerlemen ve tercihlerin cihazında yerel olarak (yerel depolama) kaydedilir. Bu veriler cihazda kalır ve uygulamanın verilerini temizlediğinde veya uygulamayı kaldırdığında silinir. Profil resmi seçersen, sistemin resim seçicisiyle tek bir resim seçersin (galeri izni istenmez); uygulama onu 256×256 boyutunda küçük bir kopyaya kırpar. Bu kopya yalnızca cihazında saklanır, hiçbir yere yüklenmez veya paylaşılmaz. “Varsayılan”ı seçerek istediğin zaman kaldırabilirsin. <b>Oyun arşivin</b> (bitirdiğin son 200 oyunun hamleleri ve sonuçları) de yalnızca cihazında saklanır; arşiv ekranından istediğin oyunu silebilirsin. Uygulama içindeki “İlerlemeyi yedekle” ekranından elle bir yedek dosyası oluşturabilirsin; bu dosya tamamen senin kontrolündedir ve bize gönderilmez.</p>
     <p class="tr"><b>Android yedeği:</b> Uygulama, oyun ilerlemenin bir kopyasını kendi özel depolama alanına kaydeder. Böylece Android’in yerleşik yedeği bunu <b>kendi Google hesabında</b> saklayabilir ve uygulamayı yeni bir telefona kurduğunda geri yükleyebilir. Bu yedek, cihazının yedekleme ayarlarına (Ayarlar → Google → Yedekleme) göre Google tarafından yönetilir; biz erişemeyiz. Cihaz yedeğini kapatırsan durur. <b>Ana ekran widget’ı ve paylaşım:</b> Widget, serini ve günün bulmacası durumunu yalnızca cihazdaki verilerle gösterir. Paylaştığın görseller (ör. haftalık rapor kartı) cihazda oluşturulur ve yalnızca sistem paylaş menüsünde seçtiğin uygulamaya gönderilir.</p>
+    <h3 class="es">a) Datos guardados en tu dispositivo</h3>
+    <p class="es">El progreso del juego y tus preferencias se guardan localmente en tu dispositivo (almacenamiento local). Estos datos permanecen en el dispositivo y se eliminan cuando borras los datos de la Aplicación o la desinstalas. Si eliges una foto de perfil, seleccionas una sola imagen con el selector del sistema (no se pide permiso de acceso a la galería); la Aplicación la recorta en una copia pequeña de 256×256 que se guarda solo en tu dispositivo y nunca se sube ni se comparte. Puedes quitarla cuando quieras eligiendo “Predeterminada”. Tu <b>archivo de partidas</b> (las jugadas y resultados de tus últimas 200 partidas terminadas) también se guarda solo en tu dispositivo; puedes borrar cualquier partida desde la pantalla del archivo. Puedes crear un archivo de copia de seguridad manual desde la pantalla “Copia de tu progreso” de la Aplicación; ese archivo lo creas y controlas tú por completo y no se nos envía.</p>
+    <p class="es"><b>Copia de seguridad de Android:</b> la Aplicación guarda una copia de tu progreso en su almacenamiento privado para que la copia de seguridad integrada de Android pueda guardarla en <b>tu propia cuenta de Google</b> y restaurarla cuando instales la Aplicación en un teléfono nuevo. Google gestiona esta copia según los ajustes de copia de seguridad de tu dispositivo (Ajustes → Google → Copia de seguridad); nosotros no podemos acceder a ella. Si desactivas la copia de seguridad del dispositivo, se detiene. <b>Widget de la pantalla de inicio y compartir:</b> el widget muestra tu racha y el estado del problema del día usando solo datos guardados en el dispositivo. Las imágenes que compartes (por ejemplo, una tarjeta de informe semanal) se crean en el dispositivo y se envían solo a la aplicación que elijas en el menú de compartir del sistema.</p>
+    <h3 class="pt">a) Dados salvos no seu dispositivo</h3>
+    <p class="pt">O progresso do jogo e suas preferências ficam salvos localmente no seu dispositivo (armazenamento local). Esses dados permanecem no dispositivo e são apagados quando você limpa os dados do Aplicativo ou o desinstala. Se você escolher uma foto de perfil, seleciona uma única imagem pelo seletor do sistema (nenhuma permissão de acesso à galeria é pedida); o Aplicativo a recorta em uma cópia pequena de 256×256 que fica salva somente no seu dispositivo e nunca é enviada ou compartilhada. Você pode removê-la quando quiser escolhendo “Padrão”. Seu <b>arquivo de partidas</b> (os lances e resultados das suas últimas 200 partidas concluídas) também fica salvo somente no seu dispositivo; você pode apagar qualquer partida na tela do arquivo. Você pode criar um arquivo de backup manual na tela “Fazer backup do progresso” do Aplicativo; esse arquivo é criado e controlado inteiramente por você e não é enviado para nós.</p>
+    <p class="pt"><b>Backup do Android:</b> o Aplicativo salva uma cópia do seu progresso no armazenamento privado dele, para que o backup integrado do Android possa guardá-la na <b>sua própria conta do Google</b> e restaurá-la quando você instalar o Aplicativo em um celular novo. Esse backup é gerenciado pelo Google conforme as configurações de backup do seu dispositivo (Configurações → Google → Backup); nós não temos acesso a ele. Se você desativar o backup do dispositivo, ele para. <b>Widget da tela inicial e compartilhamento:</b> o widget mostra sua sequência e o status do puzzle do dia usando apenas dados salvos no dispositivo. As imagens que você compartilha (por exemplo, um cartão de relatório semanal) são criadas no dispositivo e enviadas somente para o aplicativo que você escolher no menu de compartilhamento do sistema.</p>
 
     <h3 class="en">b) Advertising data (Google AdMob and its partners)</h3>
     <p class="en">To show ads, Google AdMob and its ad partners may collect and process: your device’s advertising identifier (Android Advertising ID), IP address, coarse location derived from IP, device and app information, and ad interaction data. This may be used to serve, measure and (with your consent) personalize ads. Depending on mediation settings, additional Google-certified ad partners may participate. For details, see Google’s resources linked in section 10.</p>
     <h3 class="tr">b) Reklam verileri (Google AdMob ve iş ortakları)</h3>
     <p class="tr">Reklam gösterebilmek için Google AdMob ve reklam ortakları şunları toplayıp işleyebilir: cihazının reklam kimliği (Android Reklam Kimliği), IP adresi, IP’den türetilen yaklaşık konum, cihaz ve uygulama bilgileri ve reklam etkileşim verileri. Bunlar reklam sunmak, ölçmek ve (rızanla) kişiselleştirmek için kullanılabilir. Mediation ayarlarına bağlı olarak Google onaylı ek reklam ortakları da yer alabilir. Ayrıntılar için 10. bölümdeki Google bağlantılarına bak.</p>
+    <h3 class="es">b) Datos publicitarios (Google AdMob y sus socios)</h3>
+    <p class="es">Para mostrar anuncios, Google AdMob y sus socios publicitarios pueden recopilar y tratar: el identificador de publicidad de tu dispositivo (ID de publicidad de Android), la dirección IP, la ubicación aproximada derivada de la IP, información del dispositivo y de la aplicación, y datos de interacción con los anuncios. Esto puede usarse para mostrar, medir y (con tu consentimiento) personalizar anuncios. Según la configuración de mediación, pueden participar otros socios publicitarios certificados por Google. Para más detalles, consulta los recursos de Google enlazados en la sección 10.</p>
+    <h3 class="pt">b) Dados de publicidade (Google AdMob e seus parceiros)</h3>
+    <p class="pt">Para exibir anúncios, o Google AdMob e seus parceiros de publicidade podem coletar e tratar: o identificador de publicidade do seu dispositivo (ID de publicidade do Android), o endereço IP, a localização aproximada derivada do IP, informações do dispositivo e do aplicativo e dados de interação com anúncios. Isso pode ser usado para exibir, medir e (com o seu consentimento) personalizar anúncios. Dependendo das configurações de mediação, outros parceiros de publicidade certificados pelo Google podem participar. Para mais detalhes, veja os recursos do Google indicados na seção 10.</p>
 
     <h3 class="en">c) Purchase data (Google Play Billing)</h3>
     <p class="en">If you buy an optional membership (e.g. Premium or Gold), the purchase is processed by <b>Google Play Billing</b>. Google handles your payment; we do not receive or store your card or payment details. We receive only the status of the purchase so we can unlock the corresponding features.</p>
     <h3 class="tr">c) Satın alma verileri (Google Play Billing)</h3>
     <p class="tr">İsteğe bağlı bir üyelik (ör. Premium veya Gold) satın alırsan, işlem <b>Google Play Billing</b> tarafından yürütülür. Ödemeni Google işler; kart veya ödeme bilgilerini biz almayız ve saklamayız. Yalnızca ilgili özellikleri açabilmek için satın almanın durumunu alırız.</p>
+    <h3 class="es">c) Datos de compra (Google Play Billing)</h3>
+    <p class="es">Si compras una membresía opcional (por ejemplo, Premium o Gold), la compra la procesa <b>Google Play Billing</b>. Google gestiona tu pago; nosotros no recibimos ni guardamos los datos de tu tarjeta o de pago. Solo recibimos el estado de la compra para poder desbloquear las funciones correspondientes.</p>
+    <h3 class="pt">c) Dados de compra (Google Play Billing)</h3>
+    <p class="pt">Se você comprar uma assinatura opcional (por exemplo, Premium ou Gold), a compra é processada pelo <b>Google Play Billing</b>. O Google cuida do seu pagamento; nós não recebemos nem guardamos os dados do seu cartão ou de pagamento. Recebemos apenas o status da compra para liberar os recursos correspondentes.</p>
 
     <h3 class="en">d) Usage statistics (Google Firebase Analytics)</h3>
     <p class="en">To understand how the App is used and to improve it, the App uses Google Firebase Analytics. It may collect: an app-instance identifier generated for this installation and, where available, your device’s advertising ID; in-app events (for example: a game started, a puzzle solved, a screen opened, an in-app purchase made); device and app information (model, OS version, app version, language) and coarse location derived from IP (country/region). It does <b>not</b> collect your name, e-mail, contacts or the content of your games. You can turn this off at any time in <b>Settings → Usage statistics</b>.</p>
     <h3 class="tr">d) Kullanım istatistikleri (Google Firebase Analytics)</h3>
     <p class="tr">Uygulamanın nasıl kullanıldığını anlamak ve geliştirmek için Google Firebase Analytics kullanılır. Şunları toplayabilir: bu kurulum için üretilen bir uygulama-örneği kimliği ve (varsa) cihazının reklam kimliği; uygulama içi olaylar (ör. oyun başladı, bulmaca çözüldü, ekran açıldı, uygulama içi satın alma yapıldı); cihaz ve uygulama bilgileri (model, işletim sistemi sürümü, uygulama sürümü, dil) ve IP’den türetilen yaklaşık konum (ülke/bölge). Adını, e-postanı, rehberini veya oynadığın oyunların içeriğini <b>toplamaz</b>. Bunu istediğin zaman <b>Ayarlar → Kullanım istatistikleri</b> bölümünden kapatabilirsin.</p>
+    <h3 class="es">d) Estadísticas de uso (Google Firebase Analytics)</h3>
+    <p class="es">Para entender cómo se usa la Aplicación y mejorarla, la Aplicación utiliza Google Firebase Analytics. Puede recopilar: un identificador de instancia generado para esta instalación y, cuando esté disponible, el ID de publicidad de tu dispositivo; eventos dentro de la aplicación (por ejemplo: partida iniciada, problema resuelto, pantalla abierta, compra realizada); información del dispositivo y de la aplicación (modelo, versión del sistema operativo, versión de la aplicación, idioma) y la ubicación aproximada derivada de la IP (país/región). <b>No</b> recopila tu nombre, correo electrónico, contactos ni el contenido de tus partidas. Puedes desactivarlo cuando quieras en <b>Ajustes → Estadísticas de uso</b>.</p>
+    <h3 class="pt">d) Estatísticas de uso (Google Firebase Analytics)</h3>
+    <p class="pt">Para entender como o Aplicativo é usado e melhorá-lo, o Aplicativo usa o Google Firebase Analytics. Ele pode coletar: um identificador de instância gerado para esta instalação e, quando disponível, o ID de publicidade do seu dispositivo; eventos no aplicativo (por exemplo: partida iniciada, puzzle resolvido, tela aberta, compra realizada); informações do dispositivo e do aplicativo (modelo, versão do sistema operacional, versão do aplicativo, idioma) e a localização aproximada derivada do IP (país/região). Ele <b>não</b> coleta seu nome, e-mail, contatos nem o conteúdo das suas partidas. Você pode desativar isso quando quiser em <b>Configurações → Estatísticas de uso</b>.</p>
 
     <h3 class="en">e) Notifications (if enabled)</h3>
     <p class="en">The App may show local reminders/notifications on your device. These are generated on the device and do not require us to collect personal data.</p>
     <h3 class="tr">e) Bildirimler (etkinse)</h3>
     <p class="tr">Uygulama, cihazında yerel hatırlatma/bildirim gösterebilir. Bunlar cihazda üretilir ve kişisel veri toplamamızı gerektirmez.</p>
+    <h3 class="es">e) Notificaciones (si están activadas)</h3>
+    <p class="es">La Aplicación puede mostrar recordatorios o notificaciones locales en tu dispositivo. Se generan en el dispositivo y no requieren que recopilemos datos personales.</p>
+    <h3 class="pt">e) Notificações (se ativadas)</h3>
+    <p class="pt">O Aplicativo pode mostrar lembretes ou notificações locais no seu dispositivo. Eles são gerados no dispositivo e não exigem que coletemos dados pessoais.</p>
 
     <h3 class="en">f) Problem reports (only if you send one)</h3>
     <p class="en">If you tap <b>Settings → Report a problem</b>, the App opens your own e-mail app with a pre-filled message to <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. It contains the app version, device model and Android version (the WebView user-agent string), language, the screen you were on, how many games you have played and a short log of recent technical errors (no game content, contacts or identifiers). You can read and edit it before sending; nothing is sent unless you press send. We use it only to fix the problem, and your e-mail address is visible to us because you send the message.</p>
     <h3 class="tr">f) Sorun bildirimleri (yalnızca sen gönderirsen)</h3>
     <p class="tr"><b>Ayarlar → Sorun bildir</b>’e dokunursan, uygulama kendi e-posta uygulamanda <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a> adresine hazır bir mesaj açar. Mesajda uygulama sürümü, cihaz modeli ve Android sürümü (WebView tarayıcı kimliği), dil, o an açık olan ekran, oynadığın oyun sayısı ve son teknik hataların kısa bir kaydı bulunur (oyun içeriği, rehber veya kimlik bilgisi yoktur). Göndermeden önce okuyup düzenleyebilirsin; sen göndermedikçe hiçbir şey gönderilmez. Bunu yalnızca sorunu çözmek için kullanırız; mesajı sen gönderdiğin için e-posta adresini görürüz.</p>
+    <h3 class="es">f) Informes de problemas (solo si envías uno)</h3>
+    <p class="es">Si tocas <b>Ajustes → Informar de un problema</b>, la Aplicación abre tu propia aplicación de correo con un mensaje ya preparado para <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Contiene la versión de la aplicación, el modelo del dispositivo y la versión de Android (la cadena de agente de usuario de WebView), el idioma, la pantalla en la que estabas, cuántas partidas has jugado y un breve registro de errores técnicos recientes (sin contenido de partidas, contactos ni identificadores). Puedes leerlo y editarlo antes de enviarlo; no se envía nada a menos que pulses enviar. Solo lo usamos para solucionar el problema, y vemos tu dirección de correo porque tú envías el mensaje.</p>
+    <h3 class="pt">f) Relatos de problemas (somente se você enviar um)</h3>
+    <p class="pt">Se você tocar em <b>Configurações → Relatar um problema</b>, o Aplicativo abre o seu próprio aplicativo de e-mail com uma mensagem já preenchida para <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Ela contém a versão do aplicativo, o modelo do dispositivo e a versão do Android (a string de user-agent do WebView), o idioma, a tela em que você estava, quantas partidas você jogou e um registro curto de erros técnicos recentes (sem conteúdo das partidas, contatos ou identificadores). Você pode ler e editar antes de enviar; nada é enviado a menos que você toque em enviar. Usamos isso apenas para resolver o problema, e vemos seu endereço de e-mail porque é você quem envia a mensagem.</p>
 
     <h3 class="en">g) World Ranking (only when online features are switched on)</h3>
     <p class="en">The yearly World Ranking is <b>not active yet</b>; it starts only when the App's online features are opened. Until then your yearly XP is counted on your device only. Once active, the App sends our server (Google Firebase, region europe-west1) your player name, your country if you chose one (a two-letter code such as “TR”), the XP you earned this year, your total XP, your ELO and the date you first started playing, linked to an anonymous account ID. Other players can see a public list of the top 1,000 entries containing only the <b>player name, country flag (if chosen), yearly level and ELO</b> (never your account ID). You can turn on <b>“Hide my name in the list”</b> to appear as “Hidden Player”; your country is then not shown either, and your position still counts. Country is optional (“Prefer not to say” is the default) and can be changed or removed at any time in your profile. The optional gender field in your profile is stored only on your device and is never sent to us or shown to others. Names that look inappropriate or contain personal details (links, phone numbers) are shown as “Player #XXXX”. Please do not use your real full name as your player name. At the end of each year the top 10,000 players receive a permanent title (e.g. “2026 World #1”) stored with their account. Ranking data is kept for the season plus the following year; titles are kept as long as your account exists, and you can ask us to delete them.</p>
     <h3 class="tr">g) Dünya Sıralaması (yalnızca online özellikler açıldığında)</h3>
     <p class="tr">Yıllık Dünya Sıralaması <b>henüz etkin değildir</b>; uygulamanın online özellikleri açıldığında başlar. O zamana kadar yıllık XP’n yalnızca cihazında sayılır. Etkinleştiğinde uygulama sunucumuza (Google Firebase, bölge europe-west1) anonim bir hesap kimliğiyle bağlı olarak oyuncu adını, seçtiysen ülkeni (“TR” gibi iki harflik bir kod), bu yıl kazandığın XP’yi, toplam XP’ni, ELO’nu ve oynamaya ilk başladığın tarihi gönderir. Diğer oyuncular ilk 1000 kaydın herkese açık listesini görebilir; listede yalnızca <b>oyuncu adı, ülke bayrağı (seçtiysen), yıllık seviye ve ELO</b> bulunur (hesap kimliğin asla gösterilmez). <b>“Listede adımı gizle”</b> seçeneğini açarsan “Gizli Oyuncu” olarak görünürsün; bu durumda ülken de gösterilmez ve sıran yine sayılır. Ülke isteğe bağlıdır (varsayılan “Belirtmek istemiyorum”) ve profilinden istediğin zaman değiştirilebilir ya da kaldırılabilir. Profilindeki isteğe bağlı cinsiyet alanı yalnızca cihazında saklanır; bize gönderilmez ve başkalarına gösterilmez. Uygunsuz görünen ya da kişisel bilgi (bağlantı, telefon numarası) içeren adlar “Oyuncu #XXXX” olarak gösterilir. Lütfen oyuncu adı olarak gerçek adını ve soyadını kullanma. Her yılın sonunda ilk 10.000 oyuncu hesabına kaydedilen kalıcı bir ünvan alır (ör. “2026 Dünya 1.”). Sıralama verileri sezon boyunca ve sonraki bir yıl saklanır; ünvanlar hesabın var olduğu sürece saklanır ve silinmesini bizden isteyebilirsin.</p>
+    <h3 class="es">g) Ranking Mundial (solo cuando se activen las funciones en línea)</h3>
+    <p class="es">El Ranking Mundial anual <b>aún no está activo</b>; empezará solo cuando se abran las funciones en línea de la Aplicación. Hasta entonces, tu XP anual se cuenta solo en tu dispositivo. Una vez activo, la Aplicación enviará a nuestro servidor (Google Firebase, región europe-west1), vinculado a un ID de cuenta anónimo: tu nombre de jugador, tu país si elegiste uno (un código de dos letras como “ES”), la XP que ganaste este año, tu XP total, tu ELO y la fecha en que empezaste a jugar. Otros jugadores pueden ver una lista pública de los 1000 primeros que contiene solo el <b>nombre de jugador, la bandera del país (si la elegiste), el nivel anual y el ELO</b> (nunca tu ID de cuenta). Puedes activar <b>“Ocultar mi nombre en la lista”</b> para aparecer como “Jugador oculto”; en ese caso tampoco se muestra tu país, y tu posición sigue contando. El país es opcional (“Prefiero no decirlo” es la opción predeterminada) y puedes cambiarlo o quitarlo cuando quieras en tu perfil. El campo opcional de género de tu perfil se guarda solo en tu dispositivo y nunca se nos envía ni se muestra a otros. Los nombres que parezcan inapropiados o contengan datos personales (enlaces, números de teléfono) se muestran como “Jugador #XXXX”. Por favor, no uses tu nombre y apellidos reales como nombre de jugador. Al final de cada año, los 10 000 mejores jugadores reciben un título permanente (por ejemplo, “Mundial 2026 n.º 1”) guardado en su cuenta. Los datos del ranking se guardan durante la temporada y el año siguiente; los títulos se guardan mientras exista tu cuenta, y puedes pedirnos que los eliminemos.</p>
+    <h3 class="pt">g) Ranking Mundial (somente quando os recursos online forem ativados)</h3>
+    <p class="pt">O Ranking Mundial anual <b>ainda não está ativo</b>; ele começa apenas quando os recursos online do Aplicativo forem abertos. Até lá, seu XP anual é contado somente no seu dispositivo. Quando estiver ativo, o Aplicativo enviará ao nosso servidor (Google Firebase, região europe-west1), vinculado a um ID de conta anônimo: seu nome de jogador, seu país, se você tiver escolhido um (um código de duas letras como “BR”), o XP que você ganhou neste ano, seu XP total, seu ELO e a data em que você começou a jogar. Outros jogadores podem ver uma lista pública dos 1.000 primeiros contendo apenas <b>nome de jogador, bandeira do país (se escolhida), nível anual e ELO</b> (nunca o seu ID de conta). Você pode ativar <b>“Ocultar meu nome na lista”</b> para aparecer como “Jogador Oculto”; nesse caso seu país também não é mostrado, e sua posição continua contando. O país é opcional (“Prefiro não dizer” é o padrão) e pode ser alterado ou removido a qualquer momento no seu perfil. O campo opcional de gênero do seu perfil fica salvo somente no seu dispositivo e nunca é enviado para nós nem mostrado a outras pessoas. Nomes que pareçam impróprios ou contenham dados pessoais (links, números de telefone) aparecem como “Jogador #XXXX”. Por favor, não use seu nome completo real como nome de jogador. No fim de cada ano, os 10.000 melhores jogadores recebem um título permanente (por exemplo, “Mundial 2026 nº 1”) salvo na conta. Os dados do ranking são guardados durante a temporada e no ano seguinte; os títulos são guardados enquanto sua conta existir, e você pode nos pedir para apagá-los.</p>
+
     <h3 class="en">h) Friends (only when online features are switched on)</h3>
     <p class="en">The Friends feature is <b>not active yet</b>. Once online features are opened, you get a random 6-character friend code. Players can add you <b>only with this code</b>; there is no search by name and <b>no chat or messaging</b>. To run the feature our server stores, linked to your anonymous account ID: your friend code, your friend list, sent and received friend requests, the players you have blocked, match invites (deleted from view after 2 minutes) and the time you were last active. Your friends see only your <b>player name (or “Player #XXXX” if you hide your name), country flag if chosen, ELO and whether you are online now</b>. You can remove or block a friend at any time; blocking removes the friendship and prevents new requests. If you report a player, we store the report (reason, the reported player’s public name, both account IDs and the time) for review; the reported player is never told who reported them. Friend data is deleted when you remove a friend or delete your account; reports are kept for up to 12 months.</p>
     <h3 class="tr">h) Arkadaşlar (yalnızca online özellikler açıldığında)</h3>
     <p class="tr">Arkadaşlar özelliği <b>henüz etkin değildir</b>. Online özellikler açıldığında sana rastgele 6 karakterli bir arkadaş kodu verilir. Oyuncular seni <b>yalnızca bu kodla</b> ekleyebilir; isimle arama ve <b>sohbet/mesajlaşma yoktur</b>. Özelliğin çalışması için sunucumuz anonim hesap kimliğine bağlı olarak şunları saklar: arkadaş kodun, arkadaş listen, gönderilen ve alınan istekler, engellediğin oyuncular, maç davetleri (2 dakika sonra görünümden düşer) ve en son ne zaman etkin olduğun. Arkadaşların yalnızca <b>oyuncu adını (adını gizlediysen “Oyuncu #XXXX”), seçtiysen ülke bayrağını, ELO’nu ve şu an çevrim içi olup olmadığını</b> görür. Bir arkadaşını istediğin zaman çıkarabilir veya engelleyebilirsin; engellemek arkadaşlığı kaldırır ve yeni istekleri önler. Bir oyuncuyu şikâyet edersen şikâyet (neden, şikâyet edilen oyuncunun herkese açık adı, iki hesap kimliği ve zaman) incelenmek üzere saklanır; şikâyet edilen oyuncuya kimin şikâyet ettiği asla söylenmez. Arkadaşlık verileri arkadaşı çıkardığında veya hesabını sildiğinde silinir; şikâyetler en fazla 12 ay saklanır.</p>
+    <h3 class="es">h) Amigos (solo cuando se activen las funciones en línea)</h3>
+    <p class="es">La función Amigos <b>aún no está activa</b>. Cuando se abran las funciones en línea, recibirás un código de amigo aleatorio de 6 caracteres. Otros jugadores pueden agregarte <b>solo con este código</b>; no hay búsqueda por nombre ni <b>chat o mensajes</b>. Para que la función funcione, nuestro servidor guarda, vinculado a tu ID de cuenta anónimo: tu código de amigo, tu lista de amigos, las solicitudes enviadas y recibidas, los jugadores que bloqueaste, las invitaciones a partidas (dejan de verse a los 2 minutos) y la última vez que estuviste activo. Tus amigos solo ven tu <b>nombre de jugador (o “Jugador #XXXX” si lo ocultas), la bandera del país si la elegiste, tu ELO y si estás en línea ahora</b>. Puedes eliminar o bloquear a un amigo cuando quieras; bloquear elimina la amistad e impide nuevas solicitudes. Si denuncias a un jugador, guardamos la denuncia (motivo, nombre público del jugador denunciado, ambos ID de cuenta y la hora) para revisarla; nunca se le dice al jugador denunciado quién lo denunció. Los datos de amistad se eliminan cuando quitas a un amigo o eliminas tu cuenta; las denuncias se guardan hasta 12 meses.</p>
+    <h3 class="pt">h) Amigos (somente quando os recursos online forem ativados)</h3>
+    <p class="pt">O recurso Amigos <b>ainda não está ativo</b>. Quando os recursos online forem abertos, você receberá um código de amigo aleatório de 6 caracteres. Outros jogadores podem adicionar você <b>somente com esse código</b>; não há busca por nome nem <b>chat ou mensagens</b>. Para o recurso funcionar, nosso servidor guarda, vinculado ao seu ID de conta anônimo: seu código de amigo, sua lista de amigos, os pedidos enviados e recebidos, os jogadores que você bloqueou, os convites de partida (somem da tela após 2 minutos) e a última vez que você esteve ativo. Seus amigos veem apenas seu <b>nome de jogador (ou “Jogador #XXXX” se você ocultar seu nome), a bandeira do país se escolhida, seu ELO e se você está online agora</b>. Você pode remover ou bloquear um amigo quando quiser; bloquear desfaz a amizade e impede novos pedidos. Se você denunciar um jogador, guardamos a denúncia (motivo, nome público do jogador denunciado, os dois IDs de conta e o horário) para análise; o jogador denunciado nunca fica sabendo quem o denunciou. Os dados de amizade são apagados quando você remove um amigo ou exclui sua conta; as denúncias são guardadas por até 12 meses.</p>
+
     <h3 class="en">i) Concept Arena weekly ranking (only when online features are switched on)</h3>
     <p class="en">Practice games against the bot in the Concept Arena are stored only on your device. The weekly ranking is <b>not active yet</b>; once online games open, our server records for each online concept game the moves, the result and, for the current week, your points, wins, draws and losses, linked to your anonymous account ID. Other players can see the weekly top 100 with only your <b>player name (or “Player #XXXX” if you hide your name), country flag if chosen and points</b>. Weekly rewards (gold and chests) are recorded until you collect them. Weekly ranking data is kept for up to 8 weeks.</p>
     <h3 class="tr">i) Konsept Arenası haftalık sıralaması (yalnızca online özellikler açıldığında)</h3>
     <p class="tr">Konsept Arenası’nda bota karşı oynanan alıştırma maçları yalnızca cihazında saklanır. Haftalık sıralama <b>henüz etkin değildir</b>; online maçlar açıldığında sunucumuz her online konsept maçı için hamleleri, sonucu ve o haftaki puanını, galibiyet, beraberlik ve mağlubiyet sayılarını anonim hesap kimliğine bağlı olarak kaydeder. Diğer oyuncular haftalık ilk 100 listesinde yalnızca <b>oyuncu adını (adını gizlediysen “Oyuncu #XXXX”), seçtiysen ülke bayrağını ve puanını</b> görür. Haftalık ödüller (altın ve sandık) sen alana kadar kayıtlı kalır. Haftalık sıralama verileri en fazla 8 hafta saklanır.</p>
+    <h3 class="es">i) Ranking semanal de la Arena de Conceptos (solo cuando se activen las funciones en línea)</h3>
+    <p class="es">Las partidas de práctica contra el bot en la Arena de Conceptos se guardan solo en tu dispositivo. El ranking semanal <b>aún no está activo</b>; cuando se abran las partidas en línea, nuestro servidor registrará, para cada partida de concepto en línea, las jugadas, el resultado y, para la semana en curso, tus puntos, victorias, tablas y derrotas, vinculados a tu ID de cuenta anónimo. Otros jugadores pueden ver el top 100 semanal solo con tu <b>nombre de jugador (o “Jugador #XXXX” si lo ocultas), la bandera del país si la elegiste y tus puntos</b>. Las recompensas semanales (oro y cofres) quedan registradas hasta que las recojas. Los datos del ranking semanal se guardan hasta 8 semanas.</p>
+    <h3 class="pt">i) Ranking semanal da Arena de Conceitos (somente quando os recursos online forem ativados)</h3>
+    <p class="pt">As partidas de treino contra o bot na Arena de Conceitos ficam salvas somente no seu dispositivo. O ranking semanal <b>ainda não está ativo</b>; quando as partidas online forem abertas, nosso servidor registrará, para cada partida de conceito online, os lances, o resultado e, para a semana atual, seus pontos, vitórias, empates e derrotas, vinculados ao seu ID de conta anônimo. Outros jogadores podem ver o top 100 semanal apenas com seu <b>nome de jogador (ou “Jogador #XXXX” se você ocultar seu nome), a bandeira do país se escolhida e seus pontos</b>. As recompensas semanais (ouro e baús) ficam registradas até você coletá-las. Os dados do ranking semanal são guardados por até 8 semanas.</p>
+
     <h3 class="en">j) Invite friends (only when online features are switched on)</h3>
     <p class="en">The invite program is <b>not active yet</b>. Once online opens, your friend code also works as an invite code. If you enter a friend’s code, our server records who invited you, when, and how many of your verified online games count toward the invite (game IDs and opponent account IDs, up to 20 each), linked to your anonymous account ID. To stop fake accounts, the app asks <b>Google Play Integrity</b> to confirm that the app was installed from Google Play on a genuine device; Google returns a signed verdict that our server checks and does not store. We also use Play Integrity’s <b>device recall</b> to have Google remember one yes/no note for your phone (“this phone was already used for an invite”); we never receive or store a device identifier. If you install via an invite link, the app reads the code from Google Play’s install referrer on your device. The person who invited you sees your player name (or “Player #XXXX”) and your progress (games played, active/counted). Invite records are kept while the program runs and for at most 24 months.</p>
     <h3 class="tr">j) Arkadaş daveti (yalnızca online özellikler açıldığında)</h3>
     <p class="tr">Davet programı <b>henüz etkin değildir</b>. Online açıldığında arkadaş kodun aynı zamanda davet kodu olur. Bir arkadaşının kodunu girersen sunucumuz seni kimin davet ettiğini, ne zaman davet ettiğini ve doğrulanmış online maçlarından kaçının davete sayıldığını (maç kimlikleri ve rakip hesap kimlikleri, en fazla 20’şer adet) anonim hesap kimliğine bağlı olarak kaydeder. Sahte hesapları önlemek için uygulama, <b>Google Play Integrity</b> hizmetinden uygulamanın Google Play’den gerçek bir cihaza kurulduğunu doğrulamasını ister; Google imzalı bir karar döndürür, sunucumuz bunu kontrol eder ve saklamaz. Ayrıca Play Integrity’nin <b>cihaz hafızası</b> özelliğiyle Google’ın telefonun için tek bir evet/hayır notu (“bu telefon bir davette kullanıldı”) tutmasını sağlarız; hiçbir cihaz kimliği bize gelmez ve tarafımızca saklanmaz. Bir davet bağlantısıyla kurarsan uygulama, kodu cihazındaki Google Play kurulum yönlendiricisinden (install referrer) okur. Seni davet eden kişi oyuncu adını (ya da “Oyuncu #XXXX”) ve ilerlemeni (oynanan maç, aktif/sayıldı) görür. Davet kayıtları program sürdüğü sürece ve en fazla 24 ay saklanır.</p>
+    <h3 class="es">j) Invitar amigos (solo cuando se activen las funciones en línea)</h3>
+    <p class="es">El programa de invitaciones <b>aún no está activo</b>. Cuando se abra el modo en línea, tu código de amigo también servirá como código de invitación. Si introduces el código de un amigo, nuestro servidor registra quién te invitó, cuándo y cuántas de tus partidas en línea verificadas cuentan para la invitación (ID de partidas e ID de cuenta de los rivales, hasta 20 de cada uno), vinculado a tu ID de cuenta anónimo. Para evitar cuentas falsas, la aplicación pide a <b>Google Play Integrity</b> que confirme que se instaló desde Google Play en un dispositivo auténtico; Google devuelve un veredicto firmado que nuestro servidor comprueba y no guarda. También usamos la función de <b>memoria del dispositivo</b> (device recall) de Play Integrity para que Google recuerde una única nota de sí/no sobre tu teléfono (“este teléfono ya se usó para una invitación”); nunca recibimos ni guardamos un identificador del dispositivo. Si instalas mediante un enlace de invitación, la aplicación lee el código desde el referente de instalación (install referrer) de Google Play en tu dispositivo. La persona que te invitó ve tu nombre de jugador (o “Jugador #XXXX”) y tu progreso (partidas jugadas, activa/contada). Los registros de invitaciones se guardan mientras dure el programa y como máximo 24 meses.</p>
+    <h3 class="pt">j) Convidar amigos (somente quando os recursos online forem ativados)</h3>
+    <p class="pt">O programa de convites <b>ainda não está ativo</b>. Quando o online abrir, seu código de amigo também funcionará como código de convite. Se você digitar o código de um amigo, nosso servidor registra quem convidou você, quando, e quantas das suas partidas online verificadas contam para o convite (IDs das partidas e IDs de conta dos adversários, até 20 de cada), vinculado ao seu ID de conta anônimo. Para impedir contas falsas, o aplicativo pede ao <b>Google Play Integrity</b> que confirme que o aplicativo foi instalado pelo Google Play em um dispositivo genuíno; o Google devolve um veredito assinado que nosso servidor verifica e não guarda. Também usamos a <b>memória do dispositivo</b> (device recall) do Play Integrity para que o Google lembre uma única anotação de sim/não sobre o seu celular (“este celular já foi usado em um convite”); nunca recebemos nem guardamos um identificador do dispositivo. Se você instalar por um link de convite, o aplicativo lê o código a partir do referenciador de instalação (install referrer) do Google Play no seu dispositivo. A pessoa que convidou você vê seu nome de jogador (ou “Jogador #XXXX”) e seu progresso (partidas jogadas, ativo/contado). Os registros de convite são guardados enquanto o programa existir e por no máximo 24 meses.</p>
   </section>
 
   <section>
-    <h2><span class="num">03</span><span class="en">How the data is used</span><span class="tr">Verilerin nasıl kullanıldığı</span></h2>
+    <h2><span class="num">03</span><span class="en">How the data is used</span><span class="tr">Verilerin nasıl kullanıldığı</span><span class="es">Cómo se usan los datos</span><span class="pt">Como os dados são usados</span></h2>
     <ul class="en">
       <li>To run the game and remember your progress and settings on your device.</li>
       <li>To display advertising and keep the App free of charge.</li>
@@ -176,46 +221,74 @@
       <li>Rızanla, sana daha uygun (kişiselleştirilmiş) reklamlar göstermek.</li>
       <li>İsteğe bağlı uygulama içi satın alımları işlemek ve geri yüklemek.</li>
     </ul>
+    <ul class="es">
+      <li>Para que el juego funcione y recuerde tu progreso y tus ajustes en tu dispositivo.</li>
+      <li>Para mostrar publicidad y mantener la Aplicación gratuita.</li>
+      <li>Para medir el rendimiento de los anuncios y evitar el fraude o la actividad no válida.</li>
+      <li>Para entender qué funciones se usan y mejorar el juego (estadísticas de uso anónimas).</li>
+      <li>Con tu consentimiento, para mostrarte anuncios más relevantes para ti (anuncios personalizados).</li>
+      <li>Para procesar y restaurar las compras opcionales dentro de la aplicación.</li>
+    </ul>
+    <ul class="pt">
+      <li>Para o jogo funcionar e lembrar seu progresso e suas configurações no seu dispositivo.</li>
+      <li>Para exibir publicidade e manter o Aplicativo gratuito.</li>
+      <li>Para medir o desempenho dos anúncios e evitar fraudes ou atividade inválida.</li>
+      <li>Para entender quais recursos são usados e melhorar o jogo (estatísticas de uso anônimas).</li>
+      <li>Com o seu consentimento, para mostrar anúncios mais relevantes para você (anúncios personalizados).</li>
+      <li>Para processar e restaurar compras opcionais no aplicativo.</li>
+    </ul>
   </section>
 
   <section>
-    <h2><span class="num">04</span><span class="en">Consent &amp; your ad choices</span><span class="tr">Rıza ve reklam tercihlerin</span></h2>
+    <h2><span class="num">04</span><span class="en">Consent &amp; your ad choices</span><span class="tr">Rıza ve reklam tercihlerin</span><span class="es">Consentimiento y tus opciones de anuncios</span><span class="pt">Consentimento e suas escolhas de anúncios</span></h2>
     <p class="en">In the European Economic Area, the United Kingdom and other regions where required, we use Google’s consent mechanism (UMP) to ask whether you allow personalized ads before ads are shown. In Türkiye, the App presents its own consent screen in line with the Turkish Personal Data Protection Law (KVKK). If you do not consent, you will still see ads, but only <b>non-personalized</b> ones. On iOS, the system App Tracking Transparency prompt also applies. You can change your choice at any time from <b>Settings → Privacy preferences</b> inside the App. Usage statistics (section 2d) can be turned off separately in <b>Settings → Usage statistics</b>.</p>
     <p class="tr">Avrupa Ekonomik Alanı, Birleşik Krallık ve gerekli olan diğer bölgelerde, reklamlar gösterilmeden önce kişiselleştirilmiş reklamlara izin verip vermediğini sormak için Google’ın rıza mekanizmasını (UMP) kullanırız. Türkiye’de Uygulama, KVKK’ya uygun olarak kendi rıza ekranını gösterir. Rıza vermezsen yine reklam görürsün, ancak yalnızca <b>kişiselleştirilmemiş</b> reklamlar. iOS’ta ayrıca sistemin İzleme Şeffaflığı (ATT) sorusu geçerlidir. Tercihini istediğin zaman Uygulama içindeki <b>Ayarlar → Gizlilik tercihleri</b> bölümünden değiştirebilirsin. Kullanım istatistikleri (bölüm 2d) ayrıca <b>Ayarlar → Kullanım istatistikleri</b> bölümünden kapatılabilir.</p>
+    <p class="es">En el Espacio Económico Europeo, el Reino Unido y otras regiones donde sea obligatorio, usamos el mecanismo de consentimiento de Google (UMP) para preguntarte si permites anuncios personalizados antes de mostrar anuncios. En Türkiye, la Aplicación muestra su propia pantalla de consentimiento conforme a la ley turca de protección de datos (KVKK). Si no das tu consentimiento, seguirás viendo anuncios, pero solo <b>no personalizados</b>. En iOS también se aplica el aviso de Transparencia de Seguimiento de Apps (ATT) del sistema. Puedes cambiar tu elección cuando quieras en <b>Ajustes → Preferencias de privacidad</b> dentro de la Aplicación. Las estadísticas de uso (sección 2d) pueden desactivarse por separado en <b>Ajustes → Estadísticas de uso</b>.</p>
+    <p class="pt">No Espaço Econômico Europeu, no Reino Unido e em outras regiões onde for exigido, usamos o mecanismo de consentimento do Google (UMP) para perguntar se você permite anúncios personalizados antes de exibir anúncios. Na Turquia, o Aplicativo mostra sua própria tela de consentimento de acordo com a lei turca de proteção de dados (KVKK). Se você não der consentimento, continuará vendo anúncios, mas apenas <b>não personalizados</b>. No iOS, também se aplica o aviso de Transparência de Rastreamento de Apps (ATT) do sistema. Você pode mudar sua escolha quando quiser em <b>Configurações → Preferências de privacidade</b> dentro do Aplicativo. As estatísticas de uso (seção 2d) podem ser desativadas separadamente em <b>Configurações → Estatísticas de uso</b>.</p>
   </section>
 
   <section>
-    <h2><span class="num">05</span><span class="en">Legal bases (GDPR)</span><span class="tr">Hukuki dayanaklar (GDPR)</span></h2>
-    <p class="en">Where the GDPR applies: we rely on your <b>consent</b> for personalized advertising (which you may withdraw at any time), and on our <b>legitimate interests</b> (and, for purchases, <b>performance of a contract</b>) for operating the App, showing non-personalized ads, measurement and fraud prevention.</p>
-    <p class="tr">GDPR’in uygulandığı durumlarda: kişiselleştirilmiş reklam için <b>rızana</b> (istediğin zaman geri alabilirsin) dayanırız; Uygulamayı çalıştırmak, kişiselleştirilmemiş reklam göstermek, ölçüm ve sahtekârlık önleme için <b>meşru menfaatimize</b> (satın almalarda ise <b>sözleşmenin ifasına</b>) dayanırız.</p>
+    <h2><span class="num">05</span><span class="en">Legal bases (GDPR, LGPD)</span><span class="tr">Hukuki dayanaklar (GDPR, LGPD)</span><span class="es">Bases legales (RGPD, LGPD)</span><span class="pt">Bases legais (GDPR, LGPD)</span></h2>
+    <p class="en">Where the GDPR or Brazil’s LGPD applies: we rely on your <b>consent</b> for personalized advertising (which you may withdraw at any time), and on our <b>legitimate interests</b> (and, for purchases, <b>performance of a contract</b>) for operating the App, showing non-personalized ads, measurement and fraud prevention.</p>
+    <p class="tr">GDPR’in veya Brezilya LGPD’nin uygulandığı durumlarda: kişiselleştirilmiş reklam için <b>rızana</b> (istediğin zaman geri alabilirsin) dayanırız; Uygulamayı çalıştırmak, kişiselleştirilmemiş reklam göstermek, ölçüm ve sahtekârlık önleme için <b>meşru menfaatimize</b> (satın almalarda ise <b>sözleşmenin ifasına</b>) dayanırız.</p>
+    <p class="es">Cuando se aplique el RGPD o la LGPD de Brasil: nos basamos en tu <b>consentimiento</b> para la publicidad personalizada (que puedes retirar en cualquier momento) y en nuestro <b>interés legítimo</b> (y, para las compras, en la <b>ejecución de un contrato</b>) para hacer funcionar la Aplicación, mostrar anuncios no personalizados, medir y prevenir el fraude.</p>
+    <p class="pt">Quando se aplicar a LGPD (Lei nº 13.709/2018) ou o GDPR: nos baseamos no seu <b>consentimento</b> para a publicidade personalizada (que você pode revogar a qualquer momento) e no nosso <b>legítimo interesse</b> (e, para compras, na <b>execução de contrato</b>) para operar o Aplicativo, exibir anúncios não personalizados, fazer medições e prevenir fraudes.</p>
   </section>
 
   <section>
-    <h2><span class="num">06</span><span class="en">Sharing &amp; international transfers</span><span class="tr">Paylaşım ve uluslararası aktarım</span></h2>
+    <h2><span class="num">06</span><span class="en">Sharing &amp; international transfers</span><span class="tr">Paylaşım ve uluslararası aktarım</span><span class="es">Comunicación de datos y transferencias internacionales</span><span class="pt">Compartilhamento e transferências internacionais</span></h2>
     <p class="en">We do not sell your personal data. Data is shared with the service providers named above (Google AdMob, Google Firebase, Google Play and Google-certified ad partners) solely for the purposes described. These providers may process data in countries outside your own, including the United States. Such transfers are covered by the providers’ own safeguards and privacy policies.</p>
     <p class="tr">Kişisel verilerini satmayız. Veriler yalnızca açıklanan amaçlarla yukarıda adı geçen hizmet sağlayıcılarla (Google AdMob, Google Firebase, Google Play ve Google onaylı reklam ortakları) paylaşılır. Bu sağlayıcılar verileri kendi ülkenin dışındaki ülkelerde (ABD dahil) işleyebilir. Bu aktarımlar sağlayıcıların kendi güvenceleri ve gizlilik politikaları kapsamındadır.</p>
+    <p class="es">No vendemos tus datos personales. Los datos se comparten con los proveedores de servicios mencionados arriba (Google AdMob, Google Firebase, Google Play y socios publicitarios certificados por Google) únicamente para los fines descritos. Estos proveedores pueden tratar datos en países distintos al tuyo, incluidos los Estados Unidos. Dichas transferencias están cubiertas por las garantías y políticas de privacidad de los propios proveedores.</p>
+    <p class="pt">Não vendemos seus dados pessoais. Os dados são compartilhados com os prestadores de serviço citados acima (Google AdMob, Google Firebase, Google Play e parceiros de publicidade certificados pelo Google) somente para as finalidades descritas. Esses prestadores podem tratar dados em países diferentes do seu, incluindo os Estados Unidos. Essas transferências são cobertas pelas garantias e políticas de privacidade dos próprios prestadores.</p>
   </section>
 
   <section>
-    <h2><span class="num">07</span><span class="en">Children</span><span class="tr">Çocuklar</span></h2>
+    <h2><span class="num">07</span><span class="en">Children</span><span class="tr">Çocuklar</span><span class="es">Menores</span><span class="pt">Crianças</span></h2>
     <p class="en">The App is intended for a general audience and is <b>not directed to children under 13</b> (or the minimum age required in your country). We do not knowingly collect personal data from children. Because the App shows ads through AdMob, it is not designed for the Google Play “Designed for Families” programme.</p>
     <p class="tr">Uygulama genel bir kitleye yöneliktir ve <b>13 yaşından küçük çocuklara (veya ülkendeki asgari yaş sınırına) yönelik değildir.</b> Bilerek çocuklardan kişisel veri toplamayız. Uygulama AdMob üzerinden reklam gösterdiği için Google Play “Aileler İçin Tasarlandı” programına göre tasarlanmamıştır.</p>
+    <p class="es">La Aplicación está pensada para el público general y <b>no está dirigida a menores de 13 años</b> (o de la edad mínima exigida en tu país). No recopilamos a sabiendas datos personales de menores. Como la Aplicación muestra anuncios a través de AdMob, no está diseñada para el programa “Diseñado para familias” de Google Play.</p>
+    <p class="pt">O Aplicativo é destinado ao público em geral e <b>não é direcionado a crianças menores de 13 anos</b> (ou da idade mínima exigida no seu país). Não coletamos intencionalmente dados pessoais de crianças. Como o Aplicativo exibe anúncios pelo AdMob, ele não foi projetado para o programa “Projetado para famílias” do Google Play.</p>
   </section>
 
   <section>
-    <h2><span class="num">08</span><span class="en">Retention &amp; security</span><span class="tr">Saklama ve güvenlik</span></h2>
+    <h2><span class="num">08</span><span class="en">Retention &amp; security</span><span class="tr">Saklama ve güvenlik</span><span class="es">Conservación y seguridad</span><span class="pt">Retenção e segurança</span></h2>
     <p class="en">On-device data is kept until you clear the App’s data or uninstall it. Advertising, analytics and purchase data are retained by Google according to Google’s own policies. Problem-report e-mails are kept only until the issue is resolved and at most 12 months. We apply reasonable measures to protect information, but no method of storage or transmission is completely secure.</p>
     <p class="tr">Cihazdaki veriler, uygulama verilerini temizleyene veya uygulamayı kaldırana kadar saklanır. Reklam, analitik ve satın alma verileri Google tarafından kendi politikalarına göre saklanır. Sorun bildirimi e-postaları yalnızca sorun çözülene kadar ve en fazla 12 ay saklanır. Bilgileri korumak için makul önlemler uygularız; ancak hiçbir depolama veya iletim yöntemi tümüyle güvenli değildir.</p>
+    <p class="es">Los datos del dispositivo se conservan hasta que borres los datos de la Aplicación o la desinstales. Google conserva los datos de publicidad, analítica y compras según sus propias políticas. Los correos de informes de problemas se conservan solo hasta resolver el problema y como máximo 12 meses. Aplicamos medidas razonables para proteger la información, pero ningún método de almacenamiento o transmisión es completamente seguro.</p>
+    <p class="pt">Os dados no dispositivo são mantidos até você limpar os dados do Aplicativo ou desinstalá-lo. Os dados de publicidade, análise e compras são mantidos pelo Google de acordo com as políticas do próprio Google. Os e-mails de relato de problemas são mantidos apenas até o problema ser resolvido e por no máximo 12 meses. Aplicamos medidas razoáveis para proteger as informações, mas nenhum método de armazenamento ou transmissão é totalmente seguro.</p>
   </section>
 
   <section>
-    <h2><span class="num">09</span><span class="en">Your rights</span><span class="tr">Haklarınız</span></h2>
-    <p class="en">Depending on where you live (e.g. under the GDPR, the UK GDPR, Türkiye’s KVKK, or U.S. state laws such as the CCPA/CPRA), you may have rights to access, correct, delete, restrict or object to processing, to data portability, and to withdraw consent. Because we store no personal data of our own, you can exercise most controls directly: withdraw or change ad consent in <b>Settings → Privacy preferences</b>, reset your device’s advertising identifier in your device settings, and delete all on-device data by clearing the App’s data or uninstalling. To make a request to us, contact <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. EEA/UK users may also lodge a complaint with their local data protection authority; Türkiye users may apply to the Personal Data Protection Authority (KVKK).</p>
-    <p class="tr">Yaşadığın yere bağlı olarak (ör. GDPR, Birleşik Krallık GDPR’ı, Türkiye’de KVKK veya ABD eyalet yasaları CCPA/CPRA gibi) erişim, düzeltme, silme, işlemeyi kısıtlama veya itiraz, veri taşınabilirliği ve rızayı geri alma haklarına sahip olabilirsin. Kendimize ait kişisel veri saklamadığımız için çoğu kontrolü doğrudan kullanabilirsin: reklam rızanı <b>Ayarlar → Gizlilik tercihleri</b>’nden değiştir; cihaz ayarlarından reklam kimliğini sıfırla; uygulama verilerini temizleyerek veya uygulamayı kaldırarak cihazdaki tüm verileri sil. Bize başvuru için: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. AEA/BK kullanıcıları yerel veri koruma otoritesine şikâyette bulunabilir; Türkiye kullanıcıları Kişisel Verileri Koruma Kurumu’na (KVKK) başvurabilir.</p>
+    <h2><span class="num">09</span><span class="en">Your rights</span><span class="tr">Haklarınız</span><span class="es">Tus derechos</span><span class="pt">Seus direitos</span></h2>
+    <p class="en">Depending on where you live (e.g. under the GDPR, the UK GDPR, Türkiye’s KVKK, Brazil’s LGPD, or U.S. state laws such as the CCPA/CPRA), you may have rights to access, correct, delete, restrict or object to processing, to data portability, and to withdraw consent. Because we store no personal data of our own, you can exercise most controls directly: withdraw or change ad consent in <b>Settings → Privacy preferences</b>, reset your device’s advertising identifier in your device settings, and delete all on-device data by clearing the App’s data or uninstalling. To make a request to us, contact <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. EEA/UK users may also lodge a complaint with their local data protection authority; Türkiye users may apply to the Personal Data Protection Authority (KVKK); users in Brazil may file a complaint with the National Data Protection Authority (ANPD).</p>
+    <p class="tr">Yaşadığın yere bağlı olarak (ör. GDPR, Birleşik Krallık GDPR’ı, Türkiye’de KVKK, Brezilya’da LGPD veya ABD eyalet yasaları CCPA/CPRA gibi) erişim, düzeltme, silme, işlemeyi kısıtlama veya itiraz, veri taşınabilirliği ve rızayı geri alma haklarına sahip olabilirsin. Kendimize ait kişisel veri saklamadığımız için çoğu kontrolü doğrudan kullanabilirsin: reklam rızanı <b>Ayarlar → Gizlilik tercihleri</b>’nden değiştir; cihaz ayarlarından reklam kimliğini sıfırla; uygulama verilerini temizleyerek veya uygulamayı kaldırarak cihazdaki tüm verileri sil. Bize başvuru için: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. AEA/BK kullanıcıları yerel veri koruma otoritesine şikâyette bulunabilir; Türkiye kullanıcıları Kişisel Verileri Koruma Kurumu’na (KVKK), Brezilya’daki kullanıcılar Ulusal Veri Koruma Otoritesi’ne (ANPD) başvurabilir.</p>
+    <p class="es">Según dónde vivas (por ejemplo, en virtud del RGPD, el RGPD del Reino Unido, la KVKK de Türkiye, la LGPD de Brasil o leyes estatales de EE. UU. como la CCPA/CPRA), puedes tener derecho a acceder, rectificar, suprimir, limitar u oponerte al tratamiento, a la portabilidad de los datos y a retirar tu consentimiento. Como no guardamos datos personales propios, puedes ejercer la mayoría de los controles directamente: retira o cambia el consentimiento de anuncios en <b>Ajustes → Preferencias de privacidad</b>, restablece el identificador de publicidad en los ajustes de tu dispositivo y elimina todos los datos del dispositivo borrando los datos de la Aplicación o desinstalándola. Para hacernos una solicitud, escribe a <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Los usuarios del EEE y del Reino Unido también pueden presentar una reclamación ante su autoridad local de protección de datos (en España, la Agencia Española de Protección de Datos, AEPD); los usuarios de Türkiye pueden acudir a la Autoridad de Protección de Datos Personales (KVKK) y los usuarios de Brasil, a la Autoridad Nacional de Protección de Datos (ANPD).</p>
+    <p class="pt">Dependendo de onde você mora (por exemplo, pela LGPD no Brasil, pelo GDPR, pelo UK GDPR, pela KVKK da Turquia ou por leis estaduais dos EUA como a CCPA/CPRA), você pode ter direito a confirmação e acesso, correção, eliminação, anonimização, bloqueio ou oposição ao tratamento, portabilidade dos dados, informação sobre compartilhamento e revogação do consentimento. Como não guardamos dados pessoais próprios, você pode exercer a maioria dos controles diretamente: revogue ou altere o consentimento de anúncios em <b>Configurações → Preferências de privacidade</b>, redefina o identificador de publicidade nas configurações do seu dispositivo e apague todos os dados do dispositivo limpando os dados do Aplicativo ou desinstalando-o. Para fazer uma solicitação, escreva para <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Usuários no Brasil também podem apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD); usuários do EEE e do Reino Unido, à autoridade local de proteção de dados; e usuários na Turquia, à Autoridade de Proteção de Dados Pessoais (KVKK).</p>
   </section>
 
   <section>
-    <h2><span class="num">10</span><span class="en">Third-party policies</span><span class="tr">Üçüncü taraf politikaları</span></h2>
+    <h2><span class="num">10</span><span class="en">Third-party policies</span><span class="tr">Üçüncü taraf politikaları</span><span class="es">Políticas de terceros</span><span class="pt">Políticas de terceiros</span></h2>
     <ul class="en">
       <li>Google Privacy Policy — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
       <li>How Google uses data from apps that use its services — <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
@@ -228,12 +301,26 @@
       <li>Google reklam teknolojileri — <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></li>
       <li>Firebase gizlilik ve güvenlik — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
     </ul>
+    <ul class="es">
+      <li>Política de privacidad de Google — <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li>Cómo usa Google los datos de las aplicaciones que utilizan sus servicios — <a href="https://policies.google.com/technologies/partner-sites?hl=es" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+      <li>Publicidad y tecnologías publicitarias de Google — <a href="https://policies.google.com/technologies/ads?hl=es" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></li>
+      <li>Privacidad y seguridad de Firebase — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+    </ul>
+    <ul class="pt">
+      <li>Política de Privacidade do Google — <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+      <li>Como o Google usa dados de apps que usam seus serviços — <a href="https://policies.google.com/technologies/partner-sites?hl=pt-BR" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+      <li>Publicidade e tecnologias de anúncios do Google — <a href="https://policies.google.com/technologies/ads?hl=pt-BR" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></li>
+      <li>Privacidade e segurança do Firebase — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+    </ul>
   </section>
 
   <section>
-    <h2><span class="num">11</span><span class="en">Changes &amp; contact</span><span class="tr">Değişiklikler ve iletişim</span></h2>
-    <p class="en">We may update this policy from time to time. Material changes will be reflected by updating the “Last updated” date above and, where appropriate, through an in-app notice. Questions or requests: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Data controller: Chess Valor Realm, Denizli, Türkiye.</p>
-    <p class="tr">Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişiklikler yukarıdaki “Son güncelleme” tarihi güncellenerek ve uygun olduğunda uygulama içi bir bildirimle yansıtılır. Soru veya talepler: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Veri sorumlusu: Chess Valor Realm, Denizli, Türkiye.</p>
+    <h2><span class="num">11</span><span class="en">Changes &amp; contact</span><span class="tr">Değişiklikler ve iletişim</span><span class="es">Cambios y contacto</span><span class="pt">Alterações e contato</span></h2>
+    <p class="en">We may update this policy from time to time. Material changes will be reflected by updating the “Last updated” date above and, where appropriate, through an in-app notice. Questions or requests: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Data controller: Chess Valor Realm, Denizli, Türkiye. If the versions of this policy differ, the English version prevails.</p>
+    <p class="tr">Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişiklikler yukarıdaki “Son güncelleme” tarihi güncellenerek ve uygun olduğunda uygulama içi bir bildirimle yansıtılır. Soru veya talepler: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Veri sorumlusu: Chess Valor Realm, Denizli, Türkiye. Bu politikanın dil sürümleri arasında fark olursa İngilizce sürüm esas alınır.</p>
+    <p class="es">Podemos actualizar esta política de vez en cuando. Los cambios importantes se reflejarán actualizando la fecha de “Última actualización” de arriba y, cuando corresponda, mediante un aviso en la aplicación. Preguntas o solicitudes: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Responsable del tratamiento: Chess Valor Realm, Denizli, Türkiye. Si las versiones de esta política difieren, prevalece la versión en inglés.</p>
+    <p class="pt">Podemos atualizar esta política de tempos em tempos. Alterações importantes serão indicadas pela atualização da data de “Última atualização” acima e, quando apropriado, por um aviso no aplicativo. Dúvidas ou solicitações: <a href="mailto:chessvalorsupport@gmail.com">chessvalorsupport@gmail.com</a>. Controlador dos dados: Chess Valor Realm, Denizli, Turquia. Se as versões desta política forem diferentes, prevalece a versão em inglês.</p>
   </section>
 
 </main>
@@ -241,16 +328,27 @@
 <footer>
   <span class="en">© 2026 Chess Valor Realm. All rights reserved.</span>
   <span class="tr">© 2026 Chess Valor Realm. Tüm hakları saklıdır.</span>
+  <span class="es">© 2026 Chess Valor Realm. Todos los derechos reservados.</span>
+  <span class="pt">© 2026 Chess Valor Realm. Todos os direitos reservados.</span>
 </footer>
 
 <script>
+  var LANGS = ['en','tr','es','pt'];
   function setLang(l){
+    if (LANGS.indexOf(l) < 0) l = 'en';
     document.documentElement.setAttribute('data-lang', l);
-    document.documentElement.setAttribute('lang', l);
+    document.documentElement.setAttribute('lang', l === 'pt' ? 'pt-BR' : l);
     document.querySelectorAll('.langbtn').forEach(function(b){
       b.setAttribute('aria-pressed', String(b.dataset.lang === l));
     });
   }
+  // İlk dil: ?lang=xx (oyun bunu gönderir) → yoksa tarayıcı/telefon dili → yoksa İngilizce
+  (function(){
+    var q = '';
+    try { q = (new URLSearchParams(location.search).get('lang') || '').slice(0,2).toLowerCase(); } catch (e) {}
+    if (LANGS.indexOf(q) < 0) { try { q = (navigator.language || '').slice(0,2).toLowerCase(); } catch (e) {} }
+    setLang(LANGS.indexOf(q) >= 0 ? q : 'en');
+  })();
 </script>
 
 </body>
